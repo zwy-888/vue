@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+
+    <input type="text" v-model="msg"> <input type="button" value="发表到留言板" @click="addNote">
+
+    <ul>
+        <li v-for="(value, index) in notebook" :key="index">
+            <span>{{value}}</span> <a href="javascript:;" @click="delNote(index)">删除</a>
+        </li>
+    </ul>
+
+    <span>总数量：{{notebook.length}}条</span>
+    <input type="button" value="删除所有" @click="delAll" v-show="notebook.length!=0">
+
+</div>
+
+<!--
+实现思路：
+    1. 展示记事本
+        a.将所有的数据绑定为vue的实例
+        b.遍历vue实例中的数据并展示到页面
+    2. 发表留言
+        a.绑定事件到添加留言的按钮上
+        b.在函数的输入框中获取输入的数据
+        c.将获取到数据添加到留言板中
+    3. 删除
+        a.绑定删除事件 b.通过事件的参数确定要删除的行 c.在函数中根据传递的参数完成删除
+    4. 总数量
+-->
+
+<script src="js/vue.min.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            notebook: ["留言1", "vue真好用"],
+            msg: "",
+        },
+        methods: {
+            addNote() {
+                // 无法直接获取到输入框的数据  但可以获取到vue实例中data的数据  this
+                // 将留言板输入框与data中的变量进行绑定即可获取
+                //全是空格也能进去
+                let msg = this.msg;
+                if (msg) {
+                    if (msg == !'')
+                    // 将留言添加到末尾
+                    // this.notebook.push(this.msg);
+                    // 将留言添加到留言板的首行
+                        this.notebook.unshift(this.msg);
+                }
+
+                // 发表后将留言板输入框内容清空
+                this.msg = "";
+            },
+            delNote(index) {
+                console.log(index);
+                // 根据下标去删除数组中的某个元素
+                this.notebook.splice(index, 1)  // 参数1：从哪个下标开始删除 参数2：删除几个元素
+            },
+            delAll() {
+                this.notebook = [];
+            },
+        }
+    })
+</script>
+</body>
+</html>

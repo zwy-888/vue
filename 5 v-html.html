@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    {{name}}
+    <br>
+    <span v-text="name"></span>
+    <br>
+    <span v-text="age">111</span>
+    <br>
+    <span v-html="name">222</span>
+<!--    //和v-text一样不显示后面的222-->
+
+</div>
+<script src="js/vue.min.js"></script>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            name:"<a href=\"\">你好</a>",
+            age:222
+        }
+    })
+</script>
+</body>
+</html>

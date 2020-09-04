@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app" >
+
+<span>{{ name }},1111</span>
+<hr>
+<span v-text="name">给我学</span>
+
+</div>
+
+
+<script src="js/vue.min.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data:{
+            name:"2222222"
+        }
+    })
+</script>
+<!--<div id="app">-->
+
+<!--    <span>{{ message }}, 欢迎跟我进行学习Vue的相关知识</span>-->
+<!--    <hr>-->
+<!--    &lt;!&ndash; v-text="data中定义好的变量" 会覆盖标签原有的值  &ndash;&gt;-->
+<!--    <span v-text="message">欢迎跟我进行学习Vue的相关知识</span>-->
+
+<!--</div>-->
+
+<!--<script src="js/vue.min.js"></script>-->
+<!--<script>-->
+<!--    new Vue({-->
+<!--        el: "#app",-->
+<!--        data: {-->
+<!--            message: "hello vue",-->
+<!--        },-->
+<!--    })-->
+<!--</script>-->
+</body>
+</html>

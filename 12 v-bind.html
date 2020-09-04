@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+
+    <!--    <img alt="" title="二哈" class="aa"-->
+    <!--         src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1599118332&di=61059fac8c10f506524ce0b87eb1c259&src=http://n.sinaimg.cn/sinacn08/40/w480h360/20181201/9363-hpevhcm5874484.jpg" >-->
+
+    <!--  可以通过v-bind绑定vue中的属性 v-bind绑定的属性的值要在vue实例中的data里定义好  -->
+    <!--    <img v-bind:src="src" alt="" v-bind:title="title" v-bind:class="{aa: showCss}">-->
+
+    <!-- v-bind简化写法   -->
+    <img :src="src" alt="" :title="title" :class="{aa: showCss}">
+
+    <input type="button" value="动态加入图片样式" @click="addCss">
+    <input type="button" value="切换图" @click="changeImg">
+
+
+</div>
+
+<script src="js/vue.min.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            title: "二哈",
+            showCss: true,
+            src: "https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=195734936,2926387328&fm=26&gp=0.jpg"
+        },
+        methods:{
+            // 改变样式
+            addCss(){
+                this.showCss = !this.showCss;
+            },
+            // 切换图
+            changeImg(){
+                this.src = "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3291638106,1894579552&fm=26&gp=0.jpg"
+            },
+        }
+    })
+</script>
+</body>
+</html>

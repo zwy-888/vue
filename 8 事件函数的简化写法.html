@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    {{age}}
+    <!--    v-on 绑定事件-->
+    <input type="button" value="减一岁" @:click="click">
+</div>
+    <script src="js/vue.min.js"></script>
+    <script>
+        new Vue({
+            el: "#app",
+            data:{
+                name:"hong",
+                age: 20
+            },
+            methods:{
+                // click:function () {
+                //     console.log(this.age)
+                //     this.age--;
+
+                // 将:function去掉
+                click() {
+                        console.log(this.age)
+                        this.age--;
+                }
+            }
+        })
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    {{msg}}
+    {{age}}
+    {{user.name}}
+    {{user.age}}
+    {{arr[0]}}
+<!--    注意没有点.[]-->
+</div>
+<script src="js/vue.min.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data:{
+            //字符串
+            msg: "欢迎",
+            // 数字
+            age:111,
+            //对象
+            user:{name:"小白",age:"11"},
+            //数组
+            arr:["东","西"],
+        }
+    })
+</script>
+</body>
+</html>

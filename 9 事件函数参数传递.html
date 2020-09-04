@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+
+    <h3>{{count}}</h3>
+
+    <input type="button" value="将count修改为指定的值" @click="change_count(100, 'hong')">
+
+    <p @click="click_me">点击</p>
+    <p @click="click_me2()">点击2</p>
+<!--    -->
+    <p @click="click_me3(1, 'jack', event)">点击3</p>
+
+</div>
+<!--函数写括号就要写出对应的event参数不然不显示，写就写全要么不写-->
+<script src="js/vue.min.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            count: 20,
+        },
+        methods: {
+            change_count(number, name) {
+                console.log(name)
+                this.count = number;
+            },
+            click_me(){
+                console.log(event)
+            },
+            click_me2(event){
+                console.log(event);
+            },
+            click_me3(a, b, event){
+                console.log(a, b);
+                console.log(event);
+            }
+        }
+    })
+</script>
+</body>
+</html>

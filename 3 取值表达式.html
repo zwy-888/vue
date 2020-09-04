@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    // 大括号叫做插值表达式
+    {{msg.toUpperCase()}}
+    <p>{{num / 10}}</p>
+</div>
+<script src="js/vue.min.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data:{
+            msg: "hello"
+        }
+    })
+</script>
+</body>
+</html>
